@@ -22,6 +22,7 @@ int main()
     struct Card cardTwo;
     char populationWinner[20], areaWinner[20], GDPWinner[20], numberOfTouristAttractionsWinner[20], GDPPerCapitaWinner[20], superPowerWinner[20], populationDensityWinner[20];
 
+    // Primeira carta
     printf("Digite o estado da primeira carta: \n");
     scanf("%c", &cardOne.state);
 
@@ -65,16 +66,19 @@ int main()
     printf("Digite o número de pontos turísticos da cidade da segunda carta: \n");
     scanf("%d", &cardTwo.numberOfTouristAttractions);
 
+    // Cálculos: Primeira carta
     cardOne.populationDensity = cardOne.population / cardOne.area;
     cardOne.GDPPerCapita = cardOne.GDP / cardOne.population;
     cardOne.inverseDensity = 1 / cardOne.populationDensity;
     cardOne.superPower = cardOne.population + cardOne.area + cardOne.GDP + cardOne.numberOfTouristAttractions + cardOne.GDPPerCapita + cardOne.inverseDensity;
 
+    // Cálculos: Segunda carta
     cardTwo.populationDensity = cardTwo.population / cardTwo.area;
     cardTwo.GDPPerCapita = cardTwo.GDP / cardTwo.population;
     cardTwo.inverseDensity = 1 / cardTwo.populationDensity;
     cardTwo.superPower = cardTwo.population + cardTwo.area + cardTwo.GDP + cardTwo.numberOfTouristAttractions + cardTwo.GDPPerCapita + cardTwo.inverseDensity;
 
+    // Cálculos dos vencedores
     strcpy(populationWinner, cardOne.population != cardTwo.population ? (cardOne.population > cardTwo.population ? "Carta 1 vence (1)" : "Carta 2 vence (2)") : "Empate");
     strcpy(areaWinner, cardOne.area != cardTwo.area ? (cardOne.area > cardTwo.area ? "Carta 1 vence (1)" : "Carta 2 vence (2)") : "Empate");
     strcpy(GDPWinner, cardOne.GDP != cardTwo.GDP ? (cardOne.GDP > cardTwo.GDP ? "Carta 1 vence (1)" : "Carta 2 vence (2)") : "Empate");
@@ -84,6 +88,7 @@ int main()
     strcpy(populationDensityWinner, cardOne.populationDensity != cardTwo.populationDensity ? (cardOne.populationDensity < cardTwo.populationDensity ? "Carta 1 vence (1)" : "Carta 2 vence (2)") : "Empate");
     strcpy(GDPPerCapitaWinner, cardOne.GDPPerCapita != cardTwo.GDPPerCapita ? (cardOne.GDPPerCapita > cardTwo.GDPPerCapita ? "Carta 1 vence (1)" : "Carta 2 vence (2)") : "Empate");
 
+    // Resultados: Primeira carta
     printf("Carta 1: \n");
     printf("Estado: %c\n", cardOne.state);
     printf("Código: %c%s\n", cardOne.state, cardOne.cardCode);
@@ -99,6 +104,7 @@ int main()
     printf("<--------------------------------------->");
     printf("\n");
 
+    // Resultados: Segunda carta
     printf("Carta 2: \n");
     printf("Estado: %c\n", cardTwo.state);
     printf("Código: %c%s\n", cardTwo.state, cardTwo.cardCode);
@@ -114,6 +120,7 @@ int main()
     printf("<--------------------------------------->");
     printf("\n");
 
+    // Resultados das comparações
     printf("Comparação de cartas:\n");
     printf("População: %s\n", populationWinner);
     printf("Área: %s\n", areaWinner);

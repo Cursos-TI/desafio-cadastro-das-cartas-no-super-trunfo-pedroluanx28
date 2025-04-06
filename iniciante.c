@@ -16,6 +16,7 @@ int main()
     struct Card cardOne;
     struct Card cardTwo;
 
+    // Primeira carta
     printf("Digite o estado da primeira carta: \n");
     scanf("%c", &cardOne.state);
 
@@ -37,7 +38,7 @@ int main()
     printf("Digite o número de pontos turísticos da cidade da primeira carta: \n");
     scanf("%d", &cardOne.numberOfTouristAttractions);
 
-    // Second Card
+    // Segunda carta
     printf("Digite o estado da segunda carta: \n");
     scanf(" %c", &cardTwo.state);
 
@@ -59,6 +60,7 @@ int main()
     printf("Digite o número de pontos turísticos da cidade da segunda carta: \n");
     scanf("%d", &cardTwo.numberOfTouristAttractions);
 
+    // Resultados: Primeira carta
     printf("Carta 1: \n");
     printf("Estado: %c\n", cardOne.state);
     printf("Código: %c%s\n", cardOne.state, cardOne.cardCode);
@@ -72,6 +74,7 @@ int main()
     printf("<--------------------------------------->");
     printf("\n");
 
+    // Resultados: Segunda carta
     printf("Carta 2: \n");
     printf("Estado: %c\n", cardTwo.state);
     printf("Código: %c%s\n", cardTwo.state, cardTwo.cardCode);
